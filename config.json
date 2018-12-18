@@ -1,0 +1,15 @@
+{
+  "hydra": {
+    "serviceName": "bulletin",
+    "serviceIP": "",
+    "servicePort": 0,
+    "serviceType": "",
+    "serviceDescription": "",
+    "redis": {
+      "url": "redis-14668.c62.us-east-1-4.ec2.cloud.redislabs.com",
+      "port": 14668,
+      "db": 0,
+	  "password": "ilovejava"
+    }
+  }
+}
