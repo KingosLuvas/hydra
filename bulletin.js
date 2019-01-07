@@ -80,7 +80,7 @@ function genererBulletins(nbrBulletins){
 		console.log('serviceInfo', serviceInfo);
 		hydra.on('message', (message) => {
 		  let messageReply = hydra.createUMFMessage({
-			to: 'modif:/',
+			to: 'affiche:/',
 			frm: 'bulletin:/',
 			bdy: bulletins
 		  });
