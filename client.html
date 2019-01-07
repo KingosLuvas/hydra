@@ -6,19 +6,22 @@
   </head>
   
   <body>
-	<form method="post" action="traitement.php">
-		<h2>Combien de bulletin voulez vous créer ?</h2>
-		<input type="number" value="1" /> 
-		<input type="button" value="Valider">
+	<form method="post" action=#>
+		<h2>Combien de bulletins voulez-vous creer ?</h2>
+		<input id="nbBull" type="number" value="1" /> 
+		<input type="button" value="Valider" onClick="genererBulletins(3);">
 	</form>
-	<form method="post" action="traitement.php">
+	
+	<form method="post" action=#>
 	   <p>
-		   <label for="date">Choisir la date</label><br />
-		   <select name="date" id="date">
-			   <option value="france">France</option>
+		   <label>Choisir la date</label><br />
+		   <select id="date">
+			   
 		   </select>
 		   <input type="button" value="Valider">
 	   </p>
 	</form>
   </body>
+
+  <script type="text/javascript" src="bulletin.js"></script>
 </html>
