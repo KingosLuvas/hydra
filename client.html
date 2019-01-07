@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bulletin meteo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  </head>
+  
+  <body>
+	<form method="post" action="traitement.php">
+		<h2>Combien de bulletin voulez vous créer ?</h2>
+		<input type="number" value="1" /> 
+		<input type="button" value="Valider">
+	</form>
+	<form method="post" action="traitement.php">
+	   <p>
+		   <label for="date">Choisir la date</label><br />
+		   <select name="date" id="date">
+			   <option value="france">France</option>
+		   </select>
+		   <input type="button" value="Valider">
+	   </p>
+	</form>
+  </body>
+</html>
