@@ -9,12 +9,14 @@ function getRandomInt(max) {
 }
 
 function genererBulletins(nbrBulletins){
+	console.log("salut");
 	let bulletin = {
 			date : null,
 			meteo : null,
 			temperature : null,
 			ville : null
 	}; 
+	var jr = 13;
 	for (i=0 ; i<nbrBulletins ; i++){
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
@@ -69,9 +71,11 @@ function genererBulletins(nbrBulletins){
 		}
 		bulletin.ville=ville;
 		
-		date = new Date();
+
+		date = jr+"/01/2019";
 		bulletin.date=date;
 	
+		jr = jr+1;
 		bulletins.push(bulletin);
 	}
 
@@ -90,8 +94,19 @@ function genererBulletins(nbrBulletins){
 	  })
 	  .catch(err => console.log('err', err));
 	  
+	 
+	  for (i=0;i<bulletins.length;i++){
+		  console.log(bulletins[i].date); // PROBLEME AYAYAYA PREND QUE LE DERNIER PK ???
+		  var option = document.createElement("option");
+		  option.text = bulletins[i].date;
+		  option.value = bulletins[i].date;
+		  var select = document.getElementById('date');
+		  select.appendChild(option);
+		}
+	  
  }
+ 
  
  /*//manque à appeler la fonction 
  var nbBull = readline.question("Combien de bulletins ajoutez-vous ?");
- genererBullletins(nbBull);*/
+genererBulletins(nbBull);*/
