@@ -18,22 +18,22 @@ function genererBulletins(nbrBulletins){
 	for (i=0 ; i<nbrBulletins ; i++){
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
-		case 0:
-			meteo = "Brouillard givrant";
-			break;
-		case 1:
-			meteo = "Grand beau temps";
-			break;
-		case 2:
-			meteo = "Pluie";
-			break;
-		case 3:
-			meteo = "Vent fort";
-			break;
-		case 4:
-			meteo = "Nuageux";
+			case 0:
+				meteo = "Brouillard givrant";
+				break;
+			case 1:
+				meteo = "Grand beau temps";
+				break;
+			case 2:
+				meteo = "Pluie";
+				break;
+			case 3:
+				meteo = "Vent fort";
+				break;
+			case 4:
+				meteo = "Nuageux";
 		}
-		bulletin.meteo=randomMeteo;
+		bulletin.meteo=meteo;
 		
 		randomTemp = getRandomInt(4);
 
@@ -50,7 +50,7 @@ function genererBulletins(nbrBulletins){
 			case 3:
 				temperature = "Doux";
 		}
-		bulletin.temperature=randomTemp;
+		bulletin.temperature=temperature;
 		
 		randomVille = getRandomInt(4);
 
@@ -67,7 +67,7 @@ function genererBulletins(nbrBulletins){
 			case 3:
 				ville = "Chambery";
 		}
-		bulletin.ville=randomVille;
+		bulletin.ville=ville;
 		
 		date = new Date();
 		bulletin.date=date;
@@ -92,6 +92,6 @@ function genererBulletins(nbrBulletins){
 	  
  }
  
- //manque à appeler la fonction 
+ /*//manque à appeler la fonction 
  var nbBull = readline.question("Combien de bulletins ajoutez-vous ?");
- genererBullletins(nbBull);
+ genererBullletins(nbBull);*/
