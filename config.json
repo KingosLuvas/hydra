@@ -6,10 +6,10 @@
     "serviceType": "",
     "serviceDescription": "",
     "redis": {
-      "url": "redis-14668.c62.us-east-1-4.ec2.cloud.redislabs.com",
-      "port": 14668,
+      "url": "redis-15117.c74.us-east-1-4.ec2.cloud.redislabs.com",
+      "port": 15117,
       "db": 0,
-	  "password": "ilovejava"
+	  "password": "ilovehydra"
     }
   }
 }
