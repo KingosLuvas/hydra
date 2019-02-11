@@ -13,7 +13,7 @@ hydraExpress.init(config, () => {})
     });
 
     let message = hydra.createUMFMessage({
-      to: 'bulletin:/',
+      to: 'stock:/',
       frm: 'affiche:/',
       bdy: {}
     });

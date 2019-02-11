@@ -11,19 +11,31 @@ hydraExpress.init(config, () => {})
   .then((serviceInfo) => {
 	  
     console.log('serviceInfo', serviceInfo);
-
+	var bulletins = [];
+	
+	
     hydra.on('message', (message) => {
       console.log('message reply', message);
+	  
 
-	let response = hydra.createUMFMessage({
-      to: 'affiche:/',
-      frm: 'stock:/',
-      bdy: {}
-    });	
+	  
+	if (message.frm=='affiche:/') {
+		let response = hydra.createUMFMessage({
+		  to: 'affiche:/',
+		  frm: 'stock:/',
+		  bdy: 'test'
+		});	
 
 
-    hydra.sendMessage(response);
-    });
-   
+		hydra.sendMessage(response);
+	}
+	
+	else if(message.frm=='genere:/'){
+	  var bulletin = message.bdy.date+" "+message.bdy.ville+" "+message.bdy.meteo+" "+message.bdy.temperature;
+	  bulletins.push(bulletin);
+	  console.log(bulletins);
+	}
+	
+   });
   })
   .catch(err => console.log('err', err));

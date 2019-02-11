@@ -1,7 +1,6 @@
 var hydraExpress = require('hydra-express');
 var hydra = hydraExpress.getHydra();
 var config = require('./config.json');
-var bulletins = new Array();
 
 	 
 config.hydra.serviceName = 'genere';
@@ -10,7 +9,7 @@ function getRandomInt(max) {
    return Math.floor(Math.random() * Math.floor(max));
 }
 
-function genererBulletins(nbrBulletins,bulletins){
+function genererBulletins(){
 	
 	let bulletin = {
 			date : null,
@@ -18,8 +17,8 @@ function genererBulletins(nbrBulletins,bulletins){
 			temperature : null,
 			ville : null
 	}; 
-	var jr = 13;
-	for (i=0 ; i<nbrBulletins ; i++){
+	var jr = getRandomInt(5)+10;
+	//for (i=0 ; i<nbrBulletins ; i++){
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
 			case 0:
@@ -76,11 +75,9 @@ function genererBulletins(nbrBulletins,bulletins){
 
 		date = jr+"/01/2019";
 		bulletin.date=date;
-	
-		jr = jr+1;
-		bulletins.push(bulletin);
-		console.log(bulletins);
-	}
+		console.log(bulletin);
+		return bulletin;
+	//}
 }
 
 hydraExpress.init(config, () => {})
@@ -90,11 +87,15 @@ hydraExpress.init(config, () => {})
     hydra.on('message', (message) => {
       console.log('message reply', message);
 	  
+	  var bull = genererBulletins();
 	  let response = hydra.createUMFMessage({
       to: 'stock:/',
       frm: 'genere:/',
       bdy: {
-		  msg: `il fait beau a annecy`
+		date : bull.date,
+		meteo : bull.meteo,
+		temperature : bull.temperature,
+		ville : bull.ville
 	  }
     });
 
@@ -105,12 +106,4 @@ hydraExpress.init(config, () => {})
   })
   .catch(err => console.log('err', err));
   
-	 /* for (i=0;i<bulletins.length;i++){
-		  console.log(bulletins[i].date); // PROBLEME AYAYAYA PREND QUE LE DERNIER PK ???
-		  var option = document.createElement("option");
-		  option.text = bulletins[i].date;
-		  option.value = bulletins[i].date;
-		  var select = document.getElementById('date');
-		  select.appendChild(option);
-		}*/
 	  

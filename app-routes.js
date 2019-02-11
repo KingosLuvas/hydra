@@ -24,7 +24,7 @@ api.get('/', (req, res) => {
 api.get('/test', (req, res) => {
 	let messageReply = hydra.createUMFMessage({
 			to: 'genere:/',
-			frm: 'bulletin:/',
+			frm: 'user:/',
 			bdy: {
 				msg: `generateBulletin`
 			}
