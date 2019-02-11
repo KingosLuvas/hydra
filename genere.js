@@ -18,7 +18,6 @@ function genererBulletins(){
 			ville : null
 	}; 
 	var jr = getRandomInt(5)+10;
-	//for (i=0 ; i<nbrBulletins ; i++){
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
 			case 0:
@@ -75,9 +74,9 @@ function genererBulletins(){
 
 		date = jr+"/01/2019";
 		bulletin.date=date;
+		console.log("Nouveau bulletin :");
 		console.log(bulletin);
 		return bulletin;
-	//}
 }
 
 hydraExpress.init(config, () => {})
@@ -85,6 +84,7 @@ hydraExpress.init(config, () => {})
     console.log('serviceInfo', serviceInfo);
 
     hydra.on('message', (message) => {
+	  console.log("Nouveau message :");
       console.log('message reply', message);
 	  
 	  var bull = genererBulletins();

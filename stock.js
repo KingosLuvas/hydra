@@ -15,6 +15,7 @@ hydraExpress.init(config, () => {})
 	
 	
     hydra.on('message', (message) => {
+			console.log("Nouveau message :");
       console.log('message reply', message);
 	  
 
@@ -23,10 +24,8 @@ hydraExpress.init(config, () => {})
 		let response = hydra.createUMFMessage({
 		  to: 'affiche:/',
 		  frm: 'stock:/',
-		  bdy: 'test'
+		  bdy: bulletins
 		});	
-
-
 		hydra.sendMessage(response);
 	}
 	
