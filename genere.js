@@ -17,7 +17,7 @@ function genererBulletin(){
 			temperature : null,
 			ville : null
 	}; 
-	var jr = getRandomInt(30)+1;
+	
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
 			case 0:
@@ -71,7 +71,7 @@ function genererBulletin(){
 		}
 		bulletin.ville=ville;
 		
-
+		var jr = getRandomInt(30)+1;
 		date = jr+"/01/2019";
 		bulletin.date=date;
 		console.log("Nouveau bulletin :");
