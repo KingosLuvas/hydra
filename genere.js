@@ -17,7 +17,7 @@ function genererBulletin(){
 			temperature : null,
 			ville : null
 	}; 
-	var jr = getRandomInt(5)+10;
+	var jr = getRandomInt(30)+1;
 		randomMeteo = getRandomInt(5);
 		switch(randomMeteo) {
 			case 0:
