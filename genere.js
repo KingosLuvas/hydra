@@ -9,7 +9,7 @@ function getRandomInt(max) {
    return Math.floor(Math.random() * Math.floor(max));
 }
 
-function genererBulletins(){
+function genererBulletin(){
 	
 	let bulletin = {
 			date : null,
@@ -87,7 +87,7 @@ hydraExpress.init(config, () => {})
 	  console.log("Nouveau message :");
       console.log('message reply', message);
 	  
-	  var bull = genererBulletins();
+	  var bull = genererBulletin();
 	  let response = hydra.createUMFMessage({
       to: 'stock:/',
       frm: 'genere:/',
